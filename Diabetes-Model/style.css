@@ -1,0 +1,218 @@
+/* Colours match .streamlit/config.toml and the constants in app.py */
+:root {
+  --ink: #1E2A2C;
+  --muted: #596462;
+  --line: #D9D2C1;
+  --report: #FFFDF8;
+  --likely: #BF4A28;
+  --unlikely: #00806B;
+  --likely-tint: #F2D5C9;
+  --unlikely-tint: #C9E6DE;
+  --serif: "Fraunces", Georgia, serif;
+  --mono: "IBM Plex Mono", monospace;
+}
+
+/* Page */
+.stMainBlockContainer {
+  max-width: 1160px;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+header[data-testid="stHeader"] {
+  background: transparent;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem) !important;
+  font-weight: 500 !important;
+  line-height: 1.05 !important;
+  letter-spacing: -0.02em;
+  padding: 0 0 1rem !important;
+}
+
+/* Header */
+.eyebrow,
+.section,
+.specs span,
+.stamp,
+.track-labels,
+.score-head span,
+.report-heading {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--muted);
+}
+
+.specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 3rem;
+  padding-top: 0.85rem;
+  border-top: 2px solid var(--ink);
+  font-weight: 500;
+}
+
+.specs span {
+  display: block;
+  margin-bottom: 0.1rem;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.specs .disclaimer {
+  margin-left: auto;
+  align-self: center;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+/* Input sections */
+.intro {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.section {
+  margin: 0.75rem 0 0;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+}
+
+.section span {
+  margin-right: 0.75rem;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+[data-testid="stSliderThumbValue"] {
+  font-family: var(--mono);
+  font-weight: 500;
+  color: var(--ink);
+}
+
+/* Report card */
+.st-key-report {
+  padding: 1.75rem;
+  background: var(--report);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--ink);
+  border-radius: 4px;
+  box-shadow: 0 28px 48px -36px rgba(30, 42, 44, 0.45);
+}
+
+.stamp {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  border-radius: 3px;
+  color: #FFFFFF;
+  font-weight: 500;
+}
+
+.likely .stamp {
+  background: var(--likely);
+}
+
+.unlikely .stamp {
+  background: var(--unlikely);
+}
+
+.verdict p {
+  margin: 0.75rem 0 0;
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+/* Score meter */
+.score {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.score-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.score-head span {
+  color: var(--muted);
+}
+
+.score-head strong {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.track {
+  position: relative;
+  height: 8px;
+  margin: 0.6rem 0 0.4rem;
+  border-radius: 4px;
+  background: linear-gradient(to right,
+    var(--unlikely-tint) 0 calc(50% - 1px),
+    var(--ink) calc(50% - 1px) calc(50% + 1px),
+    var(--likely-tint) calc(50% + 1px) 100%);
+}
+
+.track i {
+  position: absolute;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--report);
+  background: var(--ink);
+  transform: translate(-50%, -50%);
+}
+
+.track-labels {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  color: var(--muted);
+}
+
+.track-labels div:last-child {
+  text-align: right;
+}
+
+.note {
+  margin: 0.5rem 0 0;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.note a {
+  color: var(--ink);
+}
+
+/* Chart heading */
+.report-heading {
+  margin: 0.5rem 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  color: var(--ink);
+  font-weight: 500;
+}
+
+@media (max-width: 640px) {
+  .st-key-report {
+    padding: 1.25rem;
+  }
+
+  .specs .disclaimer {
+    margin-left: 0;
+  }
+}
